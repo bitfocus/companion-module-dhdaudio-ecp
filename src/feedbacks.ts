@@ -18,7 +18,7 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 					default: 1,
 					min: 0,
 					max: 65535,
-					tooltip: 'Logic address (0-65535)',
+					tooltip: 'Logic address (0-65535). Use the Companion ID from the DHD Export.dpx Parser.',
 				},
 				{
 					id: 'state',
@@ -38,6 +38,12 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 
 				// Return true if current state matches expected state
 				return currentState === expectedState
+			},
+			subscribe: (feedback) => {
+				// Request the current state when a feedback is subscribed
+				const logicId = Number(feedback.options.logic_id)
+				self.log('debug', `Feedback subscribed to Logic ${logicId}, requesting state...`)
+				self.ecp.requestLogicState(logicId)
 			},
 		},
 	}
