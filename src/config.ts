@@ -10,8 +10,9 @@ export function GetConfigFields(): SomeCompanionConfigField[] {
 		{
 			type: 'textinput',
 			id: 'host',
-			label: 'Target IP',
+			label: 'DHD Console IP',
 			width: 8,
+			default: '',
 			regex: Regex.IP,
 		},
 		{
