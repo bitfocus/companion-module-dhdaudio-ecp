@@ -196,7 +196,6 @@
 			}
 
 			.logic-table thead {
-				background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
 				color: white;
 			}
 
@@ -207,6 +206,27 @@
 				position: sticky;
 				top: 0;
 				z-index: 10;
+				background: #a33a9e;
+			}
+
+			.logic-table th:first-child {
+				background: #833ab4;
+			}
+
+			.logic-table th:nth-child(2) {
+				background: #a33a9e;
+			}
+
+			.logic-table th:nth-child(3) {
+				background: #c43a78;
+			}
+
+			.logic-table th:nth-child(4) {
+				background: #e53a52;
+			}
+
+			.logic-table th:last-child {
+				background: #fcb045;
 			}
 
 			.logic-table td {
@@ -366,7 +386,12 @@
 			const uploadArea = document.getElementById('uploadArea')
 			const fileInput = document.getElementById('fileInput')
 
-			uploadArea.addEventListener('click', () => fileInput.click())
+			uploadArea.addEventListener('click', (e) => {
+				// Prevent double-trigger when clicking the button
+				if (e.target.tagName !== 'BUTTON') {
+					fileInput.click()
+				}
+			})
 
 			uploadArea.addEventListener('dragover', (e) => {
 				e.preventDefault()
