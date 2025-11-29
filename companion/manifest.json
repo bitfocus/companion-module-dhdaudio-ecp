@@ -5,8 +5,8 @@
 	"description": "Control DHD Audio mixing consoles via ECP protocol",
 	"version": "0.0.0",
 	"license": "MIT",
-	"repository": "git+https://github.com/daniellippens/companion-module-dhdaudio-ecp.git",
-	"bugs": "https://github.com/daniellippens/companion-module-dhdaudio-ecp/issues",
+	"repository": "git+https://github.com/bitfocus/companion-module-dhdaudio-ecp.git",
+	"bugs": "https://github.com/bitfocus/companion-module-dhdaudio-ecp/issues",
 	"maintainers": [
 		{
 			"name": "Daniel Lippens",

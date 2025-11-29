@@ -6,8 +6,7 @@
 	"scripts": {
 		"postinstall": "husky",
 		"format": "prettier -w .",
-		"package": "npm run build && companion-module-build && node scripts/postbuild.mjs && npm run package:tgz",
-		"package:tgz": "cd pkg && tar -czvf ../dhdaudio-ecp-1.0.0.tgz * && cd ..",
+		"package": "npm run build && companion-module-build",
 		"build": "rimraf dist && npm run build:main",
 		"build:main": "tsc -p tsconfig.build.json",
 		"dev": "tsc -p tsconfig.build.json --watch",
@@ -17,7 +16,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/daniellippens/companion-module-dhdaudio-ecp.git"
+		"url": "git+https://github.com/bitfocus/companion-module-dhdaudio-ecp.git"
 	},
 	"engines": {
 		"node": "^22.20",
